@@ -31,7 +31,7 @@
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.740991723" name="MCU GCC Assembler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler">
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.debuglevel.1930703566" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.debuglevel" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.debuglevel.value.g3" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.definedsymbols.1042279247" name="Define symbols (-D)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.definedsymbols" useByScannerDiscovery="false" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="LA=HIGH_PERFORMACE"/>
+									<listOptionValue builtIn="false" value="LA=HIGH_PERFORMANCE"/>
 									<listOptionValue builtIn="false" value="MF_PANELMAJ"/>
 									<listOptionValue builtIn="false" value="MF=PANELMAJ"/>
 									<listOptionValue builtIn="false" value="MEASURE_TIMINGS"/>
@@ -75,7 +75,7 @@
 									<listOptionValue builtIn="false" value="BLASFEO_TARGET=GENERIC"/>
 									<listOptionValue builtIn="false" value="EXT_DEP=0"/>
 									<listOptionValue builtIn="false" value="TARGET=GENERIC"/>
-									<listOptionValue builtIn="false" value="LA=HIGH_PERFORMACE"/>
+									<listOptionValue builtIn="false" value="LA=HIGH_PERFORMANCE"/>
 									<listOptionValue builtIn="false" value="STM32H743xx"/>
 									<listOptionValue builtIn="false" value="DEBUG"/>
 								</option>

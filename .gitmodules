@@ -1,3 +1,15 @@
 [submodule "acados"]
 	path = acados
 	url = https://github.com/mindThomas/acados
+[submodule "CMakeBased/hal/stm32h7xx_hal_driver"]
+	path = CMakeBased/hal/stm32h7xx_hal_driver
+	url = https://github.com/STMicroelectronics/stm32h7xx_hal_driver.git
+    shallow = true
+[submodule "CMakeBased/hal/cmsis_device_h7"]
+	path = CMakeBased/hal/cmsis_device_h7
+	url = https://github.com/STMicroelectronics/cmsis_device_h7.git
+    shallow = true
+[submodule "CMakeBased/hal/cmsis_core"]
+	path = CMakeBased/hal/cmsis_core
+	url = https://github.com/STMicroelectronics/cmsis_core.git
+    shallow = true

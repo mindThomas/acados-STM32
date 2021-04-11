@@ -10,6 +10,8 @@ None of the projects includes the acados source files within their folder. Inste
 git submodule update --init --recursive
 ```
 
+Note that the example project tested here uses `HPIPM` and `QPOASES` or any of the other supported solver are neither included in the compilation unit nor have they been tested.
+
 ### Cloning the repository
 If you have not already cloned this repository you do so by using the following command to include the tested acados version:
 ```
@@ -23,5 +25,42 @@ git submodule update --recursive --init
 ```
 
 ## STM32CubeIDE
+Install [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) v1.4.0 or later and load the project by selecting `File -> Import` and then load the project as `Existing Projects into Workspace`.
+
+In the Eclipse-based project loaded in STM32CubeIDE all files to compile from the different libraries (`acados`, `blasfeo` and `hpipm`) has been manually selected according to the example project.
 
 ## CMake Based
+This project requires [CMake](https://cmake.org/download/) and the [arm-none-eabi-gcc toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) 3.15 or later to be installed seperately.
+This project has been tested with the [GNU Arm Embedded Toolchain Version 9-2020-q2-update](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads/9-2020-q2-update).
+OpenOCD is used for flashing and debugging. The project has been tested with [xpack-openocd-0.11.0](https://xpack.github.io/blog/2021/03/15/openocd-v0-11-0-1-released/) on Ubuntu 18.04.
+
+In the CMake based project all settings and which files to build are loaded automatically through the CMake build system based on the target configuration.
+
+Add/set the path to your ARM toolchain folder (which contains the executable `arm-none-eabi-gcc` and more) in your `.bashrc`:
+```
+export ARM_TOOLCHAIN_DIR="/path/to/gcc-arm-none-eabi-xxx/bin
+```
+
+Within a terminal navigate to the `CMakeBased` folder and create a build folder and run the CMake operation twice (this is required the first time for the libraries to pick up the `GENERIC` target setting).
+```
+mkdir build
+cd build
+cmake ..
+cmake ..
+make -j
+```
+
+You can now flash the code into a connected board by executing:
+`make flash`
+
+Alternatively you can open the project in CLion or other compatible IDE which can load CMake projects.
+To debug with CLion you just have to add an `OpenOCD Download & Run` configuration under `Run/Debug Configurations` where you set the following:
+
+- Target: `ACADOS-STM32.elf`
+- Executable: `ACADOS-STM32.elf`
+- GDB: either the `Bundled GDB` or the `arm-none-eabi-gdb` executable
+- Board config file: [CMakeBased/cfg/openocd.cfg](CMakeBased/cfg/openocd.cfg)
+- GDB port: 3333 (default)
+- Telnet port: 4444 (default)
+- Download: Updated Only (default)
+- Reset: Init (default)
