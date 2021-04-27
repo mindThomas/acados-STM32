@@ -1,9 +1,9 @@
 # acados-STM32
-[acados](https://github.com/acados/acados) Non-linear MPC example (inverted pendulum control) using HPIPM on STM32H7 device (Cortex-M7 @ 480 MHz)
+[acados](https://github.com/acados/acados) Non-linear MPC example (inverted pendulum control) using HPIPM on STM32H7 device (Cortex-M7 @ 400 MHz)
 
 The repository contains two versions of the project:
-1. The **STM32CubeIDE** version contains the IOC project (for STM32CubeMX) and the generated Eclipse project files to be loaded with STM32CubeIDE. In this project all the included project files are manually specified in the Project Configuration dialog of the Eclipse-based IDE.
-2. The **CMakeBased** version contains the 
+1. The **STM32CubeIDE** version contains an IOC project (for STM32CubeMX) and the generated Eclipse project files to be loaded with STM32CubeIDE. In this project all the included project files are manually specified in the Project Configuration dialog of the Eclipse-based IDE.
+2. The **CMakeBased** version contains a CMake project for the STM32 device which configures both the toolchain and includes acados and its dependencies through its CMake configuration system. Please read below how to configure the ARM toolchain necessary to compile the CMake project.
 
 None of the projects includes the acados source files within their folder. Instead the projects relies on acados being pulled into this root folder. This can be done automatically by pulling the submodules of this repository (if you have already cloned it, otherwise read below):
 ```
@@ -38,7 +38,7 @@ In the CMake based project all settings and which files to build are loaded auto
 
 Add/set the path to your ARM toolchain folder (which contains the executable `arm-none-eabi-gcc` and more) in your `.bashrc`:
 ```
-export ARM_TOOLCHAIN_DIR="/path/to/gcc-arm-none-eabi-xxx/bin
+export ARM_TOOLCHAIN_DIR="/path/to/gcc-arm-none-eabi-xxx/bin"
 ```
 
 Within a terminal navigate to the `CMakeBased` folder and create a build folder and run the CMake operation twice (this is required the first time for the libraries to pick up the `GENERIC` target setting).

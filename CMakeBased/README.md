@@ -1,4 +1,4 @@
-# STM32-CMake-template
+# CMake-based acados on STM32
 
 
 ### Cloning the repository
@@ -36,7 +36,7 @@ OpenOCD is used for flashing and debugging. The project has been tested with [xp
 
 Add/set the path to your ARM toolchain folder (which contains the executable `arm-none-eabi-gcc` and more) in your `.bashrc`:
 ```
-export ARM_TOOLCHAIN_DIR="/path/to/gcc-arm-none-eabi-xxx/bin
+export ARM_TOOLCHAIN_DIR="/path/to/gcc-arm-none-eabi-xxx/bin"
 ```
 
 Good tutorials include:
